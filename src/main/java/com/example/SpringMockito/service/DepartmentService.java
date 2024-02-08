@@ -7,11 +7,16 @@ import java.util.List;
 import java.util.Map;
 
 public interface DepartmentService {
-    Employee findMaxSalaryInTheDep(int department);
 
-    Employee findMinSalaryInTheDep(int department);
+    Collection<Employee> getEmployeesByDepartment(int id);
 
-    Collection<Employee> findAllInfoDep(int department);
+    double getSalarySumByDepartment(int id);
 
-    Map<Integer, List<Employee>> getGroupingDep();
+    double getMaxSalaryByDepartment(int id);
+
+    double getMinSalaryByDepartment(int id);
+
+    Map<Integer, List<Employee>> getEmployeesGroupedByDepartment();
 }
+
+
