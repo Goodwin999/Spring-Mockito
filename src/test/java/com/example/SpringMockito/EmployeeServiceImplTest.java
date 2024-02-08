@@ -49,13 +49,13 @@ import static org.junit.jupiter.api.Assertions.*;
             int department = 1;
             double salary = 50000.0;
 
-            // Add the employee initially
+
             employeeService.addEmployee(firstName, lastName, department, salary);
 
-            // Act
+
             employeeService.removeEmployee(firstName, lastName);
 
-            // Assert
+
             assertThrows(EmployeeNotFoundException.class,
                     () -> employeeService.findEmployee(firstName, lastName));
         }
@@ -69,20 +69,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
         @Test
         void findEmployee_ShouldReturnEmployee_WhenValidDataProvided() {
-            // Arrange
+
             EmployeeService employeeService = new EmployeeServiceImpl();
             String firstName = "John";
             String lastName = "Doe";
             int department = 1;
             double salary = 50000.0;
 
-            // Add the employee initially
+
             employeeService.addEmployee(firstName, lastName, department, salary);
 
-            // Act
+
             Employee foundEmployee = employeeService.findEmployee(firstName, lastName);
 
-            // Assert
+
             assertEmployeeValues(foundEmployee);
         }
 
